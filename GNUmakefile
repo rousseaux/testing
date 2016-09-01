@@ -74,7 +74,7 @@ build: $(out)/main.elf
 	@echo [$@]
 
 # Create one or more packages for distribution
-package: $(out)/testing.tgz
+package: $(out)/testing-v$(release).tgz
 	@echo [$@]
 
 # Distribute stuff to the system or other environments
@@ -108,6 +108,6 @@ $(out)/main.elf: $(src)/main.c
 	gcc $< -o $@
 
 # Package it in a tarball
-$(out)/testing.tgz: $(out)/main.elf
+$(out)/testing-v$(release).tgz: $(out)/main.elf
 	@rm -f $@
 	tar cvfz $@ -C $(out) $(notdir $<)
