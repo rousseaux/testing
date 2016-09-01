@@ -74,7 +74,7 @@ build: $(out)/main.elf
 	@echo [$@]
 
 # Create one or more packages for distribution
-package:
+package: $(out)/testing.tgz
 	@echo [$@]
 
 # Distribute stuff to the system or other environments
@@ -98,8 +98,16 @@ clean:
 	@echo [$@]
 	@rm -rf $(out)
 
+#
+# -----------------------------------------------------------------------------
+#
 
-
+# Build the ELF executable
 $(out)/main.elf: $(src)/main.c
 	@mkdir -p out
 	gcc $< -o $@
+
+# Package it in a tarball
+$(out)/testing.tgz: $(out)/main.elf
+	@rm -f $@
+	tar cvfz $@ -C $(out) $(notdir $<)
