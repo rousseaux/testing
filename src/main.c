@@ -17,7 +17,7 @@
 int		main(int argc, char* argv[]) {
 	printf("\n");
 	printf("Hello from a C source !\n");
-	printf("This is Pre Release v0.0.4 !\n");
+	printf("This is Test Release v0.0.4 !\n");
 	return 0;
 }
 /*
