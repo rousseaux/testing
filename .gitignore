@@ -1,0 +1,15 @@
+#
+# .gitignore
+#
+
+# First an empty file was committed.
+# Then it was pushed to github.
+# Then content was added.
+# Then it was --amend -C HEAD committed.
+# Then it was --force pushed to github.
+# After a while, the raw link was downloadable with wget.
+# Let's try it again with this added text.
+
+#
+# More text
+#
